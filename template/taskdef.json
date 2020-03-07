@@ -5,7 +5,7 @@
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
-        "awslogs-group": "firelens_test",
+        "awslogs-group": "firelens_sample",
         "awslogs-region": "ap-northeast-1",
         "awslogs-stream-prefix": "aws-for-fluent-bit"
       }
@@ -22,7 +22,7 @@
       "options": {
         "Name": "firehose",
         "region": "ap-northeast-1",
-        "delivery_stream": "firelens-test"
+        "delivery_stream": "firelens_sample"
       }
     },
     "command": ["/bin/bash","-c","while true; do echo This is FireLens test; sleep 10s; done"]

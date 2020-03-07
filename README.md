@@ -1,12 +1,16 @@
-# firelens-sample
+# Initialize
 
-# How to use
+```bash
+terraform init
+```
+
+# Create
 
 ```bash
 terraform apply
 ```
 
-# How to destroy
+# Destroy
 
 ```bash
 terraform destroy

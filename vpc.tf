@@ -1,5 +1,8 @@
 resource "aws_vpc" "main" {
   cidr_block = "10.100.0.0/16"
+  tags = {
+    Name = "firelens_sample"
+  }
 }
 
 resource "aws_subnet" "public_a" {
@@ -7,7 +10,7 @@ resource "aws_subnet" "public_a" {
   availability_zone       = "ap-northeast-1a"
   vpc_id                  = aws_vpc.main.id
   map_public_ip_on_launch = true
-  tags {
+  tags = {
     Name = "firelens_sample_public_a"
   }
 }
@@ -17,14 +20,14 @@ resource "aws_subnet" "public_c" {
   availability_zone       = "ap-northeast-1c"
   vpc_id                  = aws_vpc.main.id
   map_public_ip_on_launch = true
-  tags {
+  tags = {
     Name = "firelens_sample_public_c"
   }
 }
 
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
-  tags {
+  tags = {
     Name = "firelens_sample"
   }
 }
@@ -35,7 +38,7 @@ resource "aws_route_table" "public" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.main.id
   }
-  tags {
+  tags = {
     Name = "firelens_sample_public"
   }
 
